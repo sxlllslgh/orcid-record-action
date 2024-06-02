@@ -1,4 +1,5 @@
 const core = require('@actions/core');
+const fsp = require('fs/promise');
 
 async function fetchRecord() {
     try {
@@ -12,7 +13,12 @@ async function fetchRecord() {
             const workDetailed = await fetch(`https://pub.orcid.org/v3.0/${core.getInput('orcid-id')}/work/${work['work-summary'][0]['put-code']}`, {headers: myHeaders});
             recordJson['activities-summary'].works.group[i]['work-summary'][0] = Object.assign({}, recordJson['activities-summary'].works.group[i]['work-summary'][0], await workDetailed.json());
         }
-        core.setOutput('record', JSON.stringify(recordJson));
+        const recordFile = core.getInput('record-file');
+        if (recordFile != '') {
+            fsp.writeFile(recordFile, JSON.stringify(recordJson));
+        } else {
+            core.setOutput('record', JSON.stringify(recordJson));
+        }
     } catch (error) {
         core.setFailed(error.message);
     }

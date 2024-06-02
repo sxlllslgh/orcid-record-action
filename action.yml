@@ -13,6 +13,10 @@ inputs:
   access-token:
     description: 'ORCID access token'
     required: true
+  record-file:
+    description: 'File to write the record'
+    required: false
+    default: ''
     
 outputs:
   record:
