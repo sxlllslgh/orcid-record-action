@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const fsp = require('fs/promise');
+const fsp = require('fs/promises');
 
 async function fetchRecord() {
     try {
