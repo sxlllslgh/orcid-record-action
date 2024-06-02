@@ -1,8 +1,10 @@
 name: 'Fetch ORCID Record'
 description: 'Fetch record with detailed publications and authors in ORCID'
 author: sxlllslgh
-icon: award
-color: green
+
+branding:
+  icon: 'award'
+  color: 'green'
 
 inputs:
   orcid-id:
@@ -11,9 +13,11 @@ inputs:
   access-token:
     description: 'ORCID access token'
     required: true
+    
 outputs:
   record:
     description: 'JSON record'
+    
 runs:
   using: 'node20'
   main: 'index.js'
