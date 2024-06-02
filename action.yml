@@ -1,5 +1,9 @@
 name: 'Fetch ORCID Record'
 description: 'Fetch record with detailed publications and authors in ORCID'
+author: sxlllslgh
+icon: award
+color: green
+
 inputs:
   orcid-id:
     description: 'ORCID ID of researcher'
