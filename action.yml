@@ -1,4 +1,4 @@
-name: 'Fetch ORCID Record'
+name: 'ORCID Record Action'
 description: 'Fetch record with detailed publications and authors in ORCID'
 author: sxlllslgh
 
