@@ -26,9 +26,12 @@ Please remember the __access_token__.
 ### `access-token`
 **Required** The ORCID access token obtained above.
 
+### `record-file`
+**Optional** The record json file to write. If this input was given, the output `record` will not be generated.
+
 ## Outputs
 ### `record`
-The record string in JSON format.
+The record string in JSON format. This output only exists when the `record-file` input is not given.
 
 ## Example usage
 ### 1. (Optional) Save your access token and other variables in GitHub
